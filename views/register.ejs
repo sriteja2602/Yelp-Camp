@@ -1,0 +1,98 @@
+<style>
+  .bg {
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<div class="bg">
+  
+
+<%- include("./partials/header") %>
+
+
+
+<div class="container">
+    <em style="text-align: center; "> <h2>SIGN UP! AND ENJOY OUR BEST FEATURES :)</h2></em>
+    <div class="row">
+        
+        <div style="width: 70%; margin: 60px auto;">
+            
+            <form class="ui form" action="/register" method="post">
+                <div class="field">
+                  <label><h4>First Name</h4></label>
+                  <input type="text" name="username" placeholder="First Name">
+                </div>
+                <div class="field">
+                  <label><h4>Password</h4></label>
+                  <input type="password" name="password" placeholder="Enter Password">
+                </div>
+                <div class="field">
+                  <label><h4>Admin</h4></label>
+                  <input type="password" name="admin" placeholder="Admin Code">
+                </div>
+                <div class="field">
+                  <div class="ui checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden" required="register">
+                    <label>I agree to the Terms and Conditions</label>
+                  </div>    
+                </div>
+                <div class="field" style="text-align: center;">
+                  <button class="ui positive basic button">Sign Up :)</button>
+              </div>
+              </form>
+            <script>
+                $('.ui.form')
+                    .form({
+                      fields: {
+                        
+                        username: {
+                          identifier: 'username',
+                          rules: [
+                            {
+                              type   : 'empty',
+                              prompt : 'Please enter a username'
+                            }
+                          ]
+                        },
+                        password: {
+                          identifier: 'password',
+                          rules: [
+                            {
+                              type   : 'empty',
+                              prompt : 'Please enter a password'
+                            },
+                            {
+                              type   : 'minLength[6]',
+                              prompt : 'Your password must be at least {ruleValue} characters'
+                            }
+                          ]
+                        },
+                        terms: {
+                          identifier: 'terms',
+                          rules: [
+                            {
+                              type   : 'checked',
+                              prompt : 'You must agree to the terms and conditions'
+                            }
+                          ]
+                        }
+                      }
+                    })
+                ;
+                $('.ui.checkbox')
+                    .checkbox();
+            </script>
+            
+        </div>
+        
+    </div>
+</div>
+
+<br>
+<br> <br><br>
+
+<%- include("./partials/footer") %>
+
+</div>

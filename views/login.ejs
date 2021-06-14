@@ -1,0 +1,47 @@
+
+
+<%- include("./partials/header") %>
+
+
+
+<div class="container">
+    <em><h2 style="text-align: center; text-decoration: underline;">Enjoy Our Best Features By Logging In!!</h2></em>
+    <div class="row">
+        
+        
+        <div style="width: 70%; margin: 60px auto;">
+            <!-- <form action="/login" method="post">
+                <div class="form-group">
+                    <input class="form-control forms" type="text" name="username" placeholder="Enter Username">
+                </div>
+                <div class="form-group">
+                    <input class="form-control forms" type="password" name="password" placeholder="Enter Password">
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Log In</button>  
+                </div>
+                
+            </form>    -->
+            <form class="ui form" action="/login" method="post">
+                <div class="field">
+                  <label><h4>Username</h4></label>
+                  <input type="text" name="username" placeholder="Enter Username" required="required">
+                </div>
+                <div class="field">
+                  <label><h4>Password</h4></label>
+                  <input type="password" name="password" placeholder="Enter Password" required="required">
+                </div>     
+                <div class="field" style="text-align: center;">
+                    <button class="ui positive basic button">Log In :)</button>
+                </div>
+            </form>
+           
+        </div>
+        
+    </div>
+</div>
+
+
+
+<%- include("./partials/footer") %>

@@ -1,0 +1,38 @@
+<%- include("../partials/header") %>
+
+
+<div class="container">
+    <h1 style="text-align: center; margin-top: 25px;">Add New Comment to <%= campground.name  %></h1> 
+    <div class="row">
+        
+        
+
+            <!-- <form class="ui form" action="/campgrounds/<%= campground._id %>/comments" method="post">
+                <div class="field" style="margin:50px 50px; width: auto;">
+                  <textarea rows="2" name="comment[text]"  required="required"></textarea>
+                </div>
+                <div class="field" style="text-align: center;">
+                    <button class="ui primary basic button">Add Comment</button>
+                </div>
+            </form> -->
+            
+            
+            <div style="width: 70%; margin: 0px auto;">
+                <form class="ui form" action="/campgrounds/<%= campground._id %>/comments" method="post">
+                    <div class="field" style="margin:50px 50px; width: auto;">
+                      <textarea rows="2" name="comment[text]"  required="required"></textarea>
+                    </div>
+                    <div class="field" style="text-align: center;">
+                        <button class="ui primary basic button">Add Comment</button>
+                    </div>
+                </form>
+                <a href="/campgrounds">Go Back To Campgrounds Page</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<hr>
+
+<%- include("../partials/footer") %>

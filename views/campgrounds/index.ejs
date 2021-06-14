@@ -1,0 +1,121 @@
+<%- include("../partials/header") %>
+
+   <%   if (currentUser && currentUser.isAdmin) { %>
+       <h1>You are an Admin</h1>
+       <%  } %>
+       <div class="header2">
+            
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h2 style="text-align: center;">Check Out The Best Campgrounds Here!!</h2>
+            <p></p>
+            
+            <p style="text-align: center;"><a class="btn btn-primary btn-md"  href="/campgrounds/new">Add a New Campground!</a></p>
+        </div>
+    </header>
+
+    <!-- <div class="row text-center" style="display:flex; flex-wrap:wrap">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6">
+                
+                <div class="thumbnail">
+                    <img src="<%= campground.image %>" alt="">
+                    <div class="caption">
+                        <h4><%= campground.name %></h4>
+                        <a href="/campgrounds/<%= campground._id %>" btn btn-primary>SHOW MORE!!</a>
+                    </div>
+                </div>
+
+            </div>
+        <% }) %>
+    </div> -->
+    <div class="ui row" >
+        <% campgrounds.forEach(function(campground){ %>
+        <div class="col-md-3 col-sm-6" >
+            <div class="ui link cards" style="padding-bottom: 15px;">
+                <div class="card" style="width: 100%; text-align: center; " >
+                  <a href="/campgrounds/<%= campground._id %>" class="image">
+                    <img src="<%= campground.image %>">
+                  </a>
+                  
+                  <div class="content">
+                    <a class="header" href="/campgrounds/<%= campground._id %>"><%= campground.name %></a>
+                    <!-- <div class="meta">
+                      <a>Friends</a>
+                    </div> -->
+                    <div style="padding-top: 5px;">
+                      <a class="description" href="/campgrounds/<%= campground._id %>">
+                        <a href="/campgrounds/<%= campground._id %>" btn btn-primary>SHOW MORE!!</a>
+                    </a>
+                    </div>
+                  </div>
+                  <div class="extra content" style="padding-top: 0px;"> 
+                    <div class="extra">
+                      <div class="ui star rating" data-rating="4"></div>
+                    </div>
+                  </div>
+                  <!-- <div class="extra content">
+                    <span class="right floated">
+                      Joined in 2013
+                    </span>
+                    <span>
+                      <i class="user icon"></i>
+                      75 Friends
+                    </span>
+                  </div> -->
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+    <!--  -->
+    <script>
+        $('.rating')
+          .rating({
+            initialRating: 3,
+            maxRating: 5
+          })
+        ;
+    </script>
+    <!-- <a href="" onclick="topFunction()" id="myBtn" title="Go to top"><i class="arrow up icon"></i></a> -->
+    <a href="" onclick="topFunction()" id="myBtn" title="Go to top"><i class="arrow up icon"></i></a>
+    <script>
+      //Get the button
+      var mybutton = document.getElementById("myBtn");
+      
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+      </script>
+      <script>
+        // When the user scrolls the page, execute myFunction 
+        window.onscroll = function() {myFunction()};
+        
+        function myFunction() {
+          var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          var scrolled = (winScroll / height) * 100;
+          document.getElementById("myBar").style.width = scrolled + "%";
+        }
+        </script>
+      <hr>
+    <%- include("../partials/footer") %>
+</div>
